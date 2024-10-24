@@ -11,7 +11,7 @@ from sklearn.metrics import accuracy_score
 app = Flask(__name__)
 
 # Firebase setup
-cred = credentials.Certificate("credentials.json")
+# Remove this comment - cred = credentials.Certificate("credentials.json")
 firebase_admin.initialize_app(cred, {"databaseURL": "https://hap-project-7fa9f-default-rtdb.asia-southeast1.firebasedatabase.app/"})
 ref = db.reference("/")
 
