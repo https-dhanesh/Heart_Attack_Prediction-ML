@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    padding: 20px;
+    margin: 0;
+}
+
+legend {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+label {
+    position: relative;
+    color: #4189e0;
+    font-family: "Poppins",sans-serif;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+input[type="text"],
+select {
+    width: 35%;
+    padding: 12px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #555555;
+}
+
+button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px 20px;
+}
+
+button:hover {
+    background-color: #fc0b0b;
+}
+
+
+#chest-pain-options,
+#ecg-options {
+    margin-left: 30px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+
+    input[type="text"],
+    select,
+    button,
+    input[type="radio"] {
+        font-size: 14px;
+    }
+
+    label,
+    legend {
+        font-size: 18px;
+    }
+}

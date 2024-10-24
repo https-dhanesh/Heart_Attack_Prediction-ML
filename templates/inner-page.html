@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>HEART ATTACK PREDICTION</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+<style>
+
+  #health_care_page1 .health1{
+    margin-left:20px;
+    margin-right:20px;
+    font-family: "Open Sans", sans-serif;
+    text-align: justify;
+  }
+  #health_care_page1 .health1 h3{
+    font:bold;
+    margin-top: 25px;
+    margin-bottom: 10px; 
+    color: #191919;
+  }
+  #health_care_page1 .health1 h6{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font:bold;
+    color: rgb(172, 251, 1);
+  }
+  #health_care_page1 .health1 h1{
+    font-size: 30px;
+    margin-bottom:5px;
+    font-weight:650;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color:white;
+    text-decoration: none;
+    text-align: center;
+  
+  }
+  #health_care_page1 .navigater{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+  }
+  #health_care_page1 .ul_list_css{
+    display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      margin-left: -12px;
+      padding: 0;
+  }
+  #health_care_page1 .ulist{
+  white-space: nowrap;
+  white-space-collapse: collapse;
+  text-wrap: nowrap;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  
+  }
+  #health_care_page1 .ulist:after{
+    content: "";
+      background: #bcbfc5;
+      position: absolute;
+      top: 2px;
+      right: -1px;
+      bottom: 0;
+      height: 16px;
+      width: 1px;
+      margin: auto;
+  }
+  
+  #health_care_page1 .list_css{
+    cursor: pointer;
+      text-decoration: none;
+      border-color: currentColor;
+      color: #02838d;
+      font-size: 16px;
+      line-height: 28px;
+      padding-left: 12px;
+      padding-right: 12px;
+  }
+  
+  .img-bg {
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("static/assets/img/inner_heart.jpg") fixed center center;
+    background-size: cover;
+    padding: 120px 0;
+  }
+  .img-bg2 {
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("static/assets/img/inner_heart2.jpg") fixed center center;
+    background-size: cover;
+    padding: 120px 0;
+  }
+  #health_care_page2 .health2 h6{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: rgb(179, 255, 0);
+    font:bold;
+  }
+  #health_care_page2 .health2 h1{
+    font-size: 30px;
+    margin-bottom:5px;
+    font-weight:750;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  
+  }
+
+  #health_care_page2 .health2{
+    margin-left:20px;
+    margin-right:20px;
+    font-family: "Open Sans", sans-serif;
+    text-align: justify;
+  }
+  
+  #health_care_page2 .health2 h3{
+    font:bold;
+    margin-top: 25px;
+    margin-bottom: 10px;  
+    color: #191919;
+  }
+  #health_care_page2 .list_css{
+    cursor: pointer;
+      text-decoration: none;
+      border-color: currentColor;
+      color: #02838d;
+      font-size: 16px;
+      line-height: 28px;
+      padding-left: 12px;
+      padding-right: 12px;
+  }
+  #d1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin: 0px;
+  }
+  @media (min-width: 1024px) {
+    #d1 {
+     margin-left: 150px;
+     margin-right: 150px;
+    }
+  }
+  @media (max-width: 800px) {
+    #img-bg {
+      background-attachment: fixed;
+      height: 520px;
+    }
+  }
+  @media (max-width: 800px) {
+    #img-bg2 {
+      background-attachment: fixed;
+      height: 550px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #img-bg {
+      text-align: center;
+    }
+  
+    #img-bg .container {
+      padding-top: 50px;
+    }
+  
+    #img-bg h1 {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  
+    #hero h6 {
+      font-size: 15px;
+      line-height: 20px;
+      margin-bottom: 30px;
+    }
+
+    #d1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin: 0px;
+  }
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div class="css-0">
+    <div>
+        <a class="chartbeat-section" name="home_top"></a>
+    </div>
+    </div>
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">gpk2324heartattackprediction@gmail.com</a>
+        <i class="bi bi-phone-fill phone-icon"></i>0000000000
+      </div>
+      <div class="social-links d-none d-md-block">
+        <a href="#" class="facebook"><i class="bi bi-envelope-fill"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+     
+      <h1 class="logo"><a>HEART ATTACK PREDICTION</a></h1>
+      
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+     
+      <nav id="navbar" class="navbar">
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <div id="d1">
+    <section id="health_care_page1">
+      <div class="health1">
+  <div class="param">
+    <b><h2>PARAMETERS LIST </h2></b>
+  <h3>Chest Pain</h3>
+  Chest pain can mean different things. Continuous pain, like in angina, happens when the heart doesn't get enough oxygen due to blocked arteries. It feels like pressure and usually comes with physical activity. Rest or medicine can help. A heart attack is more serious, with intense and lasting pain, along with other symptoms like trouble breathing. Exercise can also cause chest pain, usually due to blocked arteries, called CAD, which limits blood flow during physical activity. Doctors use tests to find out what's wrong and treat it quickly.
+  <h3>Shortness of Breath</h3>
+  Shortness of breath can mean problems with the heart, like heart failure or a heart attack. It shows that the heart might be struggling or not working right. For example, in heart failure, fluid builds up in the lungs, making it hard to breathe. During a heart attack, the heart doesn't get enough oxygen, causing chest pain and trouble breathing. Other heart issues, like irregular heartbeats or problems with heart valves, can also cause breathing problems. If you're having trouble breathing, especially without doing much, it's important to see a doctor right away for help.
+  <h3>Lightheadedness/Vomiting</h3>
+  Lightheadedness and vomiting can both happen when the heart isn't working well and blood isn't flowing properly. If the heart isn't pumping blood like it should, it can make you feel dizzy or like you might faint. Sometimes, if you're having really bad chest pain, like during a heart attack, your body might react by making you throw up. Also, when the heart is struggling, like in heart failure, fluid can build up in the body, including in the stomach, which can make you feel sick and throw up. These symptoms, along with others like chest pain or trouble breathing, can be signs of a serious heart problem, so it's important to see a doctor right away if you're experiencing them.
+  <h3>Heart Rate</h3>
+  High heart rate, called tachycardia, happens when the heart beats too fast, like during a heart attack, putting a lot of stress on the heart. Low heart rate, called bradycardia, occurs when the heart beats too slowly, often due to problems with the heart's electrical system or certain medications. Both high and low heart rates can be signs of heart problems, so it's important to see a doctor if you notice any changes in your heart rate.
+  <h3>Cardiac Axis</h3>
+  The cardiac axis shows the direction of heart activity. Different abnormalities in this axis can signal various heart problems. Right axis deviation means the heart's activity leans right, left axis deviation leans left, extreme deviation means a severe abnormality, nonspecific deviation is unclear, and axis shift shows changes over time. These deviations can indicate different heart conditions and help doctors diagnose and treat them.
+  <h3>ST Segment Elevation/Depression</h3>
+  ST segment elevation or depression is something doctors look for on a heart test called an electrocardiogram (ECG). It's often seen during a heart attack, known as acute myocardial infarction (AMI). ST segment elevation means there's likely a blockage in a coronary artery, causing heart muscle damage. On the other hand, ST segment depression can also happen during a heart attack, indicating the heart muscle isn't getting enough oxygen. Both of these signs are crucial for doctors to diagnose and treat a heart attack quickly.
+  <br><br>
+</div>
+
+  <section id="health_care_page1">
+    <div class="health1">
+      <section id="img-bg" class="img-bg">
+        <div class="container" data-aos="zoom-in">
+  
+          <div class="text-center">
+            <h1>STEPS TO PREVENT HEART DISEASE</h1>
+      <h6>Ready to start your heart-healthy diet? Here are eight tips to get you started.</h6>
+          </div>
+  
+        </div>
+      </section>
+      
+      <nav class="navigater">
+      <ul class="ul_list_css">
+        <li class="ulist">
+            <a href="#Control_portion_size" class="list_css">Control portion size</a>
+        </li>
+        <li class="ulist">
+          <a href="#Eat_vegetables" class="list_css">Eat vegetables</a>
+        </li>
+        <li class="ulist">
+          <a href="#Whole_gains" class="list_css">Whole gains</a>
+        </li>
+        <li class="ulist">
+          <a href="#Limit_fats" class="list_css">Limit fats</a>
+        </li>
+        <li class="ulist">
+          <a href="#Low-fat_protein_sources" class="list_css">Low-fat protein sources</a>
+        </li>
+        <li class="ulist">
+          <a href="#Salt_Limit" class="list_css">Salt Limit</a>
+        </li>
+        <li class="ulist">
+          <a href="#Plan_ahead" class="list_css">Plan ahead</a>
+        </li>
+        <li class="ulist">
+          <a href="#occasional_treat" class="list_css">Occasional treat</a>
+        </li>
+      </ul>
+      </nav>
+        <p>Although you might know that eating certain foods can increase your heart disease risk, changing your eating habits is often tough. Whether you have years of unhealthy eating under your belt or you simply want to fine-tune your diet, here are eight heart-healthy diet tips.
+     Once you know which foods to eat more of and which foods to limit, you'll be on your way toward a heart-healthy diet.</p>
+     <p >
+      <div class="css-0">
+                <div>
+                    <a class="chartbeat-section" name="Control_portion_size"></a>
+                </div>
+      <h3>1. Control your portion size</h3>
+      How much you eat is just as important as what you eat. Overloading your plate, taking seconds and eating until you feel stuffed can lead to eating more calories than you should. Portions served in restaurants are often more than anyone needs.
+      </div>
+      Following a few simple tips to control food portion size can help you shape up your diet as well as your heart and waistline:
+      <ul>
+
+     <li> Use a small plate or bowl to help control your portions.</li>
+     <li> Eat more low-calorie, nutrient-rich foods, such as fruits and vegetables</li>
+     <li>Eat smaller amounts of high-calorie, high-sodium foods, such as refined, processed or fast foods.</li>
+    </ul>
+      It's also important to keep track of the number of servings you eat. Some things to keep in mind:
+      <ul>
+        <li>A serving size is a specific amount of food, defined by common measurements such as cups, ounces or pieces. For example, one serving of pasta is about 1/3 to 1/2 cup, or about the size of a hockey puck. A serving of meat, fish or chicken is about 2 to 3 ounces, or about the size and thickness of a deck of cards.</li>
+          <li>The recommended number of servings per food group may vary depending on the specific diet or guidelines you're following.</li>
+            <li>Judging serving size is a learned skill. You may need to use measuring cups and spoons or a scale until you're comfortable with your judgment.</li>
+      </ul>
+      <div class="css-0">
+        <div>
+            <a class="chartbeat-section" name="Eat_vegetables"></a>
+        </div>
+      <h3>2. Eat more vegetables and fruits</h3>
+      Vegetables and fruits are good sources of vitamins and minerals. Vegetables and fruits are also low in calories and rich in dietary fiber. Vegetables and fruits, like other plants or plant-based foods, contain substances that may help prevent cardiovascular disease. Eating more fruits and vegetables may help you cut back on higher calorie foods, such as meat, cheese and snack foods.
+      Fruits and vegetables to choose	Fruits and vegetables to limit
+      Featuring vegetables and fruits in your diet can be easy. Keep vegetables washed and cut in your refrigerator for quick snacks. Keep fruit in a bowl in your kitchen so that you'll remember to eat it. Choose recipes that have vegetables or fruits as the main ingredients, such as vegetable stir-fry or fresh fruit mixed into salads.</p>
+    </div>
+      <div class="css-0">
+        <div>
+            <a class="chartbeat-section" name="Whole_gains"></a>
+        </div>
+      <h3>3. Select whole grains</h3>
+      Whole grains are good sources of fiber and other nutrients that play a role in regulating blood pressure and heart health. You can increase the amount of whole grains in a heart-healthy diet by making simple substitutions for refined grain products. Or be adventuresome and try a new whole grain, such as whole-grain farro, quinoa or barley.
+    </div>
+      <p>
+        
+        <div class="css-0">
+          <div>
+              <a class="chartbeat-section" name="Limit_fats"></a>
+          </div><h3>4. Limit unhealthy fats</h3>
+        Limiting how much saturated and trans fats you eat is an important step to reduce your blood cholesterol and lower your risk of coronary artery disease. A high blood cholesterol level can lead to a buildup of plaques in the arteries, called atherosclerosis, which can increase the risk of heart attack and stroke.
+      </div>
+        The American Heart Association offers these guidelines for how much fat to include in a heart-healthy diet:</p>
+        <p>Note: The 2020-2025 Dietary Guidelines for Americans recommend limiting saturated fat to less than 10% of total daily calories.
+
+          There are simple ways to cut back on saturated and trans fats:
+          <ul>
+            <li> Trim fat off meat or choose lean meats with less than 10% fat.</li>
+              <li>Use less butter, margarine and shortening when cooking and serving.</li>
+                <li>Use low-fat substitutions when possible for a heart-healthy diet. For example, top a baked potato with low-sodium salsa or low-fat yogurt rather than butter, or use sliced whole fruit or low-sugar fruit spread on toast instead of margarine.</li>
+          </ul>
+          Check the food labels of cookies, cakes, frostings, crackers and chips. Not only are these foods low in nutritional value, some — even those labeled reduced fat — may contain trans fats. Trans fats are no longer allowed to be added to foods, but older products may still contain them. Trans fats may be listed as partially hydrogenated oil on the ingredient label</p>
+          <p>
+            When you do use fats, choose monounsaturated fats, such as olive oil or canola oil. Polyunsaturated fats, found in certain fish, avocados, nuts and seeds, also are good choices for a heart-healthy diet. When used in place of saturated fat, monounsaturated and polyunsaturated fats may help lower your total blood cholesterol. But moderation is essential. All types of fat are high in calories.
+
+          An easy way to add healthy fat (and fiber) to your diet is to use ground flaxseed. Flaxseeds are small brown seeds that are high in fiber and omega-3 fatty acids. Studies have shown that flaxseed lowers unhealthy cholesterol levels in some people. You can grind the flaxseeds in a coffee grinder or food processor and stir a teaspoon of them into yogurt, applesauce or hot cereal.
+          <div class="css-0">
+            <div>
+                <a class="chartbeat-section" name="Low-fat_protein_sources"></a>
+            </div>
+        <h3>5. Choose low-fat protein sources</h3>
+          Lean meat, poultry and fish, low-fat dairy products, and eggs are some of the best sources of protein. Choose lower fat options, such as skinless chicken breasts rather than fried chicken patties and skim milk rather than whole milk.
+
+          Fish is a good alternative to high-fat meats. Certain types of fish are rich in omega-3 fatty acids, which can lower blood fats called triglycerides. You'll find the highest amounts of omega-3 fatty acids in cold-water fish, such as salmon, mackerel and herring. Other sources are flaxseed, walnuts, soybeans and canola oil.
+
+          Legumes beans, peas and lentils  also are good, low-fat sources of protein and contain no cholesterol, making them good substitutes for meat. Substituting plant protein for animal protein — for example, a soy or bean burger for a hamburger — will reduce fat and cholesterol intake and increase fiber intake.
+        </div>  
+        </p>
+          <p>
+            <div class="css-0">
+              <div>
+                  <a class="chartbeat-section" name="Salt_Limit"></a>
+              </div>
+           <h3> 6. Limit or reduce salt (sodium)</h3>
+              Eating too much salt can lead to high blood pressure, a risk factor for heart disease. Limiting salt (sodium) is an important part of a heart-healthy diet. The American Heart Association recommends that:
+              Healthy adults have no more than 2,300 milligrams (mg) of sodium a day (about a teaspoon of salt)
+              Most adults ideally have no more than 1,500 mg of sodium a day
+              Although reducing the amount of salt you add to food at the table or while cooking is a good first step, much of the salt you eat comes from canned or processed foods, such as soups, baked goods and frozen dinners. Eating fresh foods and making your own soups and stews can reduce the amount of salt you eat.
+              If you like the convenience of canned soups and prepared meals, look for ones with no added salt or reduced sodium. Be wary of foods that claim to be lower in sodium because they are seasoned with sea salt instead of regular table salt — sea salt has the same nutritional value as regular salt.
+              Another way to reduce the amount of salt you eat is to choose your condiments carefully. Many condiments are available in reduced-sodium versions. Salt substitutes can add flavor to your food with less sodium.
+            </div>
+            </p>
+          <p1>
+            <div class="css-0">
+              <div>
+                  <a class="chartbeat-section" name="Plan_ahead"></a>
+              </div>
+            <h3>  7. Plan ahead: Create daily menus</h3>
+            Create daily menus using the six strategies listed above. When selecting foods for each meal and snack, emphasize vegetables, fruits and whole grains. Choose lean protein sources and healthy fats, and limit salty foods. Watch your portion sizes and add variety to your menu choices.
+            For example, if you have grilled salmon one evening, try a black bean burger the next night. This helps ensure that you'll get all of the nutrients the body needs. Variety also makes meals and snacks more interesting.
+          </div>
+            <div class="css-0">
+              <div>
+                  <a class="chartbeat-section" name="occasional_treat"></a>
+              </div>
+            <h3> 8. Allow yourself an occasional treat</h3>
+              Allow yourself an indulgence every now and then. A candy bar or handful of potato chips won't derail your heart-healthy diet. But don't let it turn into an excuse for giving up on your healthy-eating plan. If overindulgence is the exception, rather than the rule, you'll balance things out over the long term. What's important is that you eat healthy foods most of the time.
+              Include these eight tips into your life, and you'll find that heart-healthy eating is both doable and enjoyable. With planning and a few simple substitutions, you can eat with your heart in mind.
+              </div>
+            </p1>
+        </div>
+      </section>
+
+      <div class="css-0">
+        <div>
+            <a class="chartbeat-section" name="health_care"></a>
+        </div>
+        </div>
+ 
+
+      <section id="health_care_page2">
+        <div class="health2" >
+          <section id="img-bg2" class="img-bg2">
+            <div class="container" data-aos="zoom-in">
+      
+              <div class="text-center">
+                <h1>IMPROVE YOUR HEARTH HEALTH</h1>
+                <h6> 26 tips to improve heart health</h6>
+              </div>
+      
+            </div>
+          </section>
+           
+           
+      <h3>Knit a scarf</h3>
+      <p>Put your hands to work to help your mind unwind. Engaging in activities such as knitting, sewing, and crocheting can help relieve stress and do your ticker some good. Other relaxing hobbies, such as woodworking, cooking, or completing jigsaw puzzles, may also help take the edge off stressful days.</p>
+      
+      <h3>Power up your salsa with beans</h3>
+      <p>When paired with low-fat chips or fresh veggies, salsa offers a delicious and antioxidant-rich snack. Consider mixing in a can of black beans for an added boost of heart-healthy fiber. According to the Mayo Clinic, a diet rich in soluble fiber can help lower your level of low-density lipoprotein, or “bad cholesterol.” Other rich sources of soluble fiber include oats, barley, apples, pears, and avocados.</p>
+      
+      <h3>Let the music move you</h3>
+      <p>Whether you prefer a rumba beat or two-step tune, dancing makes for a great heart-healthy workout. Like other forms of aerobic exercise, it raises your heart rate and gets your lungs pumping. It also burns up to 200 calories or more per hour, reports the Mayo Clinic.</p>
+      
+      <h3>Go fish</h3>
+      <p>Eating a diet rich in omega-3 fatty acids can also help ward off heart disease. Many fish, such as salmon, tuna, sardines, and herring, are rich sources of omega-3 fatty acids. Try to eat fish at least twice a week, suggests the AHATrusted Source. If you’re concerned about mercury or other contaminants in fish, you may be happy to learn that its heart-healthy benefits tend to outweigh the risks for most people.</p>
+      
+      <h3>Laugh out loud</h3>
+      <p>Don’t just LOL in emails or Facebook posts. Laugh out loud in your daily life. Whether you like watching funny movies or cracking jokes with your friends, laughter may be good for your heart. According to the AHATrusted Source, research suggests laughing can lower stress hormones, decrease inflammation in your arteries, and raise your levels of high-density lipoprotein (HLD), also known as “good cholesterol.”</p>
+      
+      <h3>Stretch it out</h3>
+      <p>Yoga can help you improve your balance, flexibility, and strength. It can help you relax and relieve stress. As if that’s not enough, yoga also has potential to improve heart health. According to research published in the Journal of Evidence-Based Complementary & Alternative MedicineTrusted Source, yoga demonstrates potential to reduce your risk of cardiovascular disease.</p>
+      
+      <h3>Play between the sheets</h3> 
+      <p>Or you can play on top of the sheets! That’s right, having sex can be good for your heart. Sexual activity may add more than just pleasure to your life. It may also help lower your blood pressure and risk of heart disease. Research published in the American Journal of CardiologyTrusted Source shows that a lower frequency of sexual activity is associated with higher rates of cardiovascular disease.</p>
+
+      <h3>Raise a glass</h3>
+      <p>Moderate consumption of alcohol can help raise your levels of HDL, or good cholesterol. It can also help prevent blood clot formation and artery damage. According to the Mayo Clinic, red wine in particular may offer benefits for your heart. That doesn’t mean you should guzzle it at every meal. The key is to only drink alcohol in moderation.</p>
+      
+      <h3>Sidestep salt</h3>
+      <p>If the entire U.S. population reduced its average salt intake to just half a teaspoon a day, it would significantly cut the number of people who develop coronary heart disease every year, report researchers in the New England Journal of Medicine. The authors suggest that salt is one of the leading drivers of rising healthcare costs in the United States. Processed and restaurant-prepared foods tend to be especially high in salt. So think twice before filling up on your favorite fast-food fix. Consider using a salt substitute, such as Dash, if you have high blood pressure or heart failure.</p>
+      
+      <h3>Move it, move it, move it</h3>
+      <p>No matter how much you weigh, sitting for long periods of time could shorten your lifespan, warn researchers in the Archives of Internal MedicineTrusted Source and the American Heart AssociationTrusted Source. Couch potato and desk jockey lifestyles seem to have an unhealthy effect on blood fats and blood sugar. If you work at a desk, remember to take regular breaks to move around. Go for a stroll on your lunch break, and enjoy regular exercise in your leisure time.</p>
+      
+      <h3>Know your numbers</h3>
+      <p>Keeping your blood pressure, blood sugar, cholesterol, and triglycerides in check is important for good heart health. Learn the optimal levels for your sex and age group. Take steps to reach and maintain those levels. And remember to schedule regular check-ups with your doctor. If you want to make your doctor happy, keep good records of your vitals or lab numbers, and bring them to your appointments.</p>
+      
+          <h3>Eat chocolate</h3>
+      <p>Dark chocolate not only tastes delicious, it also contains heart-healthy flavonoids. These compounds help reduce inflammation and lower your risk of heart disease, suggest scientists in the journal Nutrients. Eaten in moderation, dark chocolate — not oversweetened milk chocolate — can actually be good for you. The next time you want to indulge your sweet tooth, sink it into a square or two of dark chocolate. No guilt required.</p>
+      
+      <h3>Kick your housework up a notch</h3>
+      <p>Vacuuming or mopping the floors may not be as invigorating as a Body Slam or Zumba class. But these activities and other household chores do get you moving. They can give your heart a little workout, while burning calories too. Put your favorite music on and add some pep to your step while you complete your weekly chores.</p>
+      
+      <h3>Go nuts</h3>
+      <p>Almonds, walnuts, pecans, and other tree nuts deliver a powerful punch of heart-healthy fats, protein, and fiber. Including them in your diet can help lower your risk of cardiovascular disease. Remember to keep the serving size small, suggests the AHATrusted Source. While nuts are full of healthy stuff, they’re also high in calories.</p>
+      
+      <h3>Be a kid</h3>
+      <p>Fitness doesn’t have to be boring. Let your inner child take the lead by enjoying an evening of roller skating, bowling, or laser tag. You can have fun while burning calories and giving your heart a workout.</p>
+      
+      <h3>Consider pet therapy</h3>
+      <p>Our pets offer more than good company and unconditional love. They also provide numerous health benefits. Studies reported by the National Institutes of Health (NIH) suggest that owning a pet may help improve your heart and lung function. It may also help lower your chances of dying from heart disease.</p>
+      
+      <h3>Start and stop</h3>
+      <p>Start and stop, then start and stop again. During interval training, you alternate bursts of intense physical activity with bouts of lighter activity. The Mayo Clinic reports that doing so can boost the number of calories you burn while working out.</p>
+      
+      <h3>Cut the fat</h3>
+      <p>Slicing your saturated fat intake to no more than 7 percent of your daily calories can cut your risk of heart disease, advises the USDA. If you don’t normally read nutrition labels, considering starting today. Take stock of what you’re eating and avoid foods that are high in saturated fat.</p>
+      
+      <h3>Take the scenic route home</h3>
+      <p>Put down your cell phone, forget about the driver who cut you off, and enjoy your ride. Eliminating stress while driving can help lower your blood pressure and stress levels. That’s something your cardiovascular system will appreciate.</p>
+      
+      <h3>Make time for breakfast</h3>
+      <p>The first meal of the day is an important one. Eating a nutritious breakfast every day can help you maintain a healthy diet and weight. To build a heart-healthy meal, reach for:
+      
+      whole grains, such as oatmeal, whole-grain cereals, or whole-wheat toast
+      lean protein sources, such as turkey bacon or a small serving of nuts or peanut butter
+      low-fat dairy products, such as low-fat milk, yogurt, or cheese
+      fruits and vegetables</p>
+      <h3>Take the stairs</h3>
+      <p>Exercise is essential for good heart health, so why not sneak it in at every opportunity? Take the stairs instead of the elevator. Park on the far side of the parking lot. Walk to a colleague’s desk to talk, instead of emailing them. Play with your dog or kids at the park, instead of just watching them. Every little bit adds up to better fitness.</p>
+      
+      <h3>Brew up a heart-healthy potion</h3>
+      <p>No magic is needed to brew up a cup of green or black tea. Drinking one to three cups of tea per day may help lower your risk of heart problems, reports the AHA. For example, it’s linked to lower rates of angina and heart attacks.</p>
+      
+      <h3>Brush your teeth regularly</h3>
+      <p>Good oral hygiene does more than keep your teeth white and glistening. According to the Cleveland Clinic, some research suggests that the bacteria that cause gum disease can also raise your risk of heart disease. While the research findings have been mixed, there’s no downside to taking good care of your teeth and gums.</p>
+      
+      <h3>Walk it off</h3>
+      <p>The next time you feel overwhelmed, exasperated, or angry, take a stroll. Even a five-minute walk can help clear your head and lower your stress levels, which is good for your health. Taking a half-hour walk every day is even better for your physical and mental health.</p>
+      
+      <h3>
+      Pump some iron</h3>
+      <p>Aerobic fitness is key to keeping your heart healthy, but it’s not the only type of exercise you should do. It’s also important to include regular strength training sessions in your schedule. The more muscle mass you build, the more calories you burn. That can help you maintain a heart-healthy weight and fitness level.</p>
+      
+      <h3>Find your happy place</h3>
+      <p>A sunny outlook may be good for your heart, as well as your mood. According to the Harvard T. H. Chan School of Public Health, chronic stress, anxiety, and anger can raise your risk of heart disease and stroke. Maintaining a positive outlook on life may help you stay healthier for longer.</p>
+              
+          </div>
+      </section>
+    </div>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="copyright">
+          &copy; <strong><span>2024</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/day-multipurpose-html-template-for-free/ -->
+          Designed by Aditya Kale, Sarvesh Warule, Dhanesh Shingade, Saksham Ingle, Gaurav Sonar
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+</html>
