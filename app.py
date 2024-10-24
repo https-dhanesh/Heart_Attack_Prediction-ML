@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 # Firebase setup
 cred = credentials.Certificate("credentials.json")
-firebase_admin.initialize_app(cred, {"databaseURL": "https://hap-project-7fa9f-default-rtdb.asia-southeast1.firebasedatabase.app/"})
+firebase_admin.initialize_app(cred, {"databaseURL": "your_database_url"})
 ref = db.reference("/")
 
 # Flask-Mail setup
@@ -20,9 +20,9 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'gpk2324heartattackprediction@gmail.com'
-app.config['MAIL_PASSWORD'] = 'olgh nljx qrjm dsbi'
-app.config['MAIL_DEFAULT_SENDER'] = 'gpk2324heartattackprediction@gmail.com'
+app.config['MAIL_USERNAME'] = 'your_username'
+app.config['MAIL_PASSWORD'] = 'your_password'
+app.config['MAIL_DEFAULT_SENDER'] = 'your_mail'
 
 mail = Mail(app)
 df = pd.read_csv('dataset.csv')
